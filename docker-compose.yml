@@ -16,7 +16,7 @@ services:
     ports:
       - '4000:80'
 
-  apiServer:
+  api-server:
     build:
       dockerfile: Dockerfile.dev
       context: ./server

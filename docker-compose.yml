@@ -42,7 +42,7 @@ services:
 
   worker:
     build:
-      dockerfile: Dokcerfile.dev
+      dockerfile: Dockerfile.dev
       context: ./worker
     volumes:
       - /usr/app/node_modules

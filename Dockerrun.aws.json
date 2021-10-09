@@ -1,0 +1,38 @@
+{
+    "AWSEBDockerrunversion": 2,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "image": "ajaybojedla/multi-client",
+            "hostName": "client",
+            "essential": false
+        },
+        {
+            "name": "server",
+            "image": "ajaybojedla/multi-server",
+            "hostName": "api-server",
+            "essential": false
+        },
+        {
+            "name": "worker",
+            "image": "ajaybojedla/multi-worker",
+            "hostName": "worker",
+            "essential": false
+        },
+        {
+            "name": "nginx",
+            "image": "ajaybojedla/multi-nginx",
+            "essential": true,
+            "portMappings" : [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": [
+                "client",
+                "server"
+            ]
+        }
+    ]
+}

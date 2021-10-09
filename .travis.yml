@@ -3,22 +3,22 @@ sudo: required
 services:
   - docker
 
-before_install:
-  - docker build -t ajaybojedla/complex-react-test -f ./client/Dockerfile.dev ./client
+# before_install:
+#   - docker build -t ajaybojedla/complex-react-test -f ./client/Dockerfile.dev ./client
 
-scripts:
-  - docker run -e CI=true ajaybojedla/complex-react-test npm test -- --coverage
+# scripts:
+#   - docker run -e CI=true ajaybojedla/complex-react-test npm test -- --coverage
   
-after_success:
-  - docker build -t ajaybojedla/multi-client ./client
-  - docker build -t ajaybojedla/multi-nginx ./nginx
-  - docker build -t ajaybojedla/multi-server ./server
-  - docker build -t ajaybojedla/multi-worker ./worker
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push ajaybojedla/multi-client
-  - docker push ajaybojedla/multi-nginx
-  - docker push ajaybojedla/multi-server
-  - docker push ajaybojedla/multi-worker
+# after_success:
+#   - docker build -t ajaybojedla/multi-client ./client
+#   - docker build -t ajaybojedla/multi-nginx ./nginx
+#   - docker build -t ajaybojedla/multi-server ./server
+#   - docker build -t ajaybojedla/multi-worker ./worker
+#   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+#   - docker push ajaybojedla/multi-client
+#   - docker push ajaybojedla/multi-nginx
+#   - docker push ajaybojedla/multi-server
+#   - docker push ajaybojedla/multi-worker
 
 deploy:
   provider: elasticbeanstalk

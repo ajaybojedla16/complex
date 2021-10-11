@@ -1,7 +1,6 @@
 version: '3'
 services:
   nginx:
-    restart: always
     image: "ajaybojedla/multi-nginx"
     mem_limit: 128m
     hostname: nginx
@@ -11,7 +10,7 @@ services:
   server:
     image: "ajaybojedla/multi-server"
     mem_limit: 128m
-    hostname: api-server
+    hostname: api
     environment:
       - REDIS_HOST=$REDIS_HOST
       - REDIS_PORT=$REDIS_PORT

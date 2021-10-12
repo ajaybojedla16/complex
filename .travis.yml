@@ -15,10 +15,10 @@ after_success:
   - docker build -t ajaybojedla/multi-server ./server
   - docker build -t ajaybojedla/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push ajaybojedla/multi-client
-  - docker push ajaybojedla/multi-nginx
   - docker push ajaybojedla/multi-server
   - docker push ajaybojedla/multi-worker
+  - docker push ajaybojedla/multi-client
+  - docker push ajaybojedla/multi-nginx
 
 deploy:
   provider: elasticbeanstalk

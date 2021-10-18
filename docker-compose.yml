@@ -1,11 +1,11 @@
 version: '3'
 services:
-  # nginx:
-  #   image: "ajaybojedla/multi-nginx"
-  #   mem_limit: 128m
-  #   hostname: nginx
-  #   ports:
-  #     - "80:80"
+  nginx:
+    image: "ajaybojedla/multi-nginx"
+    mem_limit: 128m
+    hostname: nginx
+    ports:
+      - "80:80"
 
   # server:
   #   image: "ajaybojedla/multi-server"

@@ -24,6 +24,8 @@ services:
     image: "ajaybojedla/multi-client"
     mem_limit: 128m
     hostname: client
+    ports:
+      - "80:80"
 
   # worker:
   #   image: "ajaybojedla/multi-worker"

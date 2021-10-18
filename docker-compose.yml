@@ -1,35 +1,35 @@
 version: '3'
 services:
-  nginx:
-    image: "ajaybojedla/multi-nginx"
-    mem_limit: 128m
-    hostname: nginx
-    ports:
-      - "80:80"
+  # nginx:
+  #   image: "ajaybojedla/multi-nginx"
+  #   mem_limit: 128m
+  #   hostname: nginx
+  #   ports:
+  #     - "80:80"
 
-  server:
-    image: "ajaybojedla/multi-server"
-    mem_limit: 128m
-    hostname: api
-    environment:
-      - REDIS_HOST=$REDIS_HOST
-      - REDIS_PORT=$REDIS_PORT
-      - PGUSER=$PGUSER
-      - PGHOST=$PGHOST
-      - PGDATABASE=$PGDATABASE
-      - PGPASSWORD=$PGPASSWORD
-      - PGPORT=$PGPORT
+  # server:
+  #   image: "ajaybojedla/multi-server"
+  #   mem_limit: 128m
+  #   hostname: api
+  #   environment:
+  #     - REDIS_HOST=$REDIS_HOST
+  #     - REDIS_PORT=$REDIS_PORT
+  #     - PGUSER=$PGUSER
+  #     - PGHOST=$PGHOST
+  #     - PGDATABASE=$PGDATABASE
+  #     - PGPASSWORD=$PGPASSWORD
+  #     - PGPORT=$PGPORT
 
   client:
     image: "ajaybojedla/multi-client"
     mem_limit: 128m
     hostname: client
 
-  worker:
-    image: "ajaybojedla/multi-worker"
-    mem_limit: 128m
-    hostname: worker
-    environment:
-      - REDIS_HOST=$REDIS_HOST
-      - REDIS_PORT=$REDIS_PORT
+  # worker:
+  #   image: "ajaybojedla/multi-worker"
+  #   mem_limit: 128m
+  #   hostname: worker
+  #   environment:
+  #     - REDIS_HOST=$REDIS_HOST
+  #     - REDIS_PORT=$REDIS_PORT
 
